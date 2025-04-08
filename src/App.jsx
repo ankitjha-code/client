@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
+// Import our new modern UI styles
+import "./styles/ModernUI.css";
+// Import our enhanced theme styles
+import "./styles/EnhancedTheme.css";
 
 // Import Components
 import Register from "./components/Register";
@@ -12,6 +16,8 @@ import Home from "./components/Home";
 import WalletConnect from "./components/WalletConnect";
 import UserHistory from "./components/UserHistory";
 import UserProfile from "./components/UserProfile";
+import Background3D from "./components/Background3D";
+import Footer from "./components/Footer";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -24,6 +30,9 @@ function App() {
   return (
     <Router>
       <div className="App">
+        {/* Add our new 3D background */}
+        <Background3D />
+
         <nav className="navbar">
           <div className="navbar-brand">Subsidy System</div>
           <div className="navbar-menu">
@@ -74,6 +83,9 @@ function App() {
             <Route path="/profile" element={<UserProfile user={user} />} />
           </Routes>
         </div>
+
+        {/* Add our new 3D footer */}
+        <Footer />
       </div>
     </Router>
   );
